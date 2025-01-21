@@ -1,9 +1,8 @@
 // NAVIGATION
-export const NAV_LINKS = [
-    { href: '/', key: 'home', label: 'Home' },
-    { href: '#how-it-works', key: 'how_hilink_work', label: 'How Ayata Work?' },
-    { href: '#gallery', key: 'destinations ', label: 'Destinations ' },
-    { href: '#contact', key: 'contact_us', label: 'Contact Us' },
+const NAV_LINKS = [
+    { key: "about", label: "About Us", href: "/about" },
+    { key: "services", label: "Services", href: "/services" },
+    { key: "contact", label: "Contact", href: "/contact" },
 ];
 
 // CAMP SECTION

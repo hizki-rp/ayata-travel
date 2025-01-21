@@ -1,4 +1,4 @@
-"use client";
+
 
 import Link from "next/link";
 
@@ -16,10 +16,15 @@ const CallToAction = () => {
                 </div>
 
                 {/* Section 2 */}
-                <div>
-                    <Link href="/contact">
-                        <button className="bg-white text-green-700 px-8 py-4 rounded-full text-lg font-semibold shadow-md hover:bg-gray-200 transition-colors">
+                <div className="flex gap-4 items-center justify-center">
+                    <Link href="/BookYourTravel">
+                        <button className="bg-white text-green-700 px-8 py-4 rounded-full text-lg font-semibold shadow-md hover:bg-gray-300 transition-colors">
                             Contact Us
+                        </button>
+                    </Link>
+                    <Link href="/contact">
+                        <button className="bg-green-600 text-gray-200 px-8 py-4 rounded-full text-lg font-semibold shadow-md hover:bg-green-700 transition-colors">
+                            Book Now
                         </button>
                     </Link>
                 </div>

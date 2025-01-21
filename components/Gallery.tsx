@@ -1,9 +1,30 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-
+import Link from "next/link";
+// Entoto, wenchi, Alalakela, chorchora, nejashi, bale sof umer, aba jifar,
 const Gallery = () => {
     const destinations = [
+        {
+            name: "Entoto",
+            image: "/entoto.jpg", // Place in public folder
+            description: "Known for its rock-hewn churches, a UNESCO World Heritage Site.",
+        },
+        {
+            name: "Al Nejashi",
+            image: "/al-nejashi.jpg", // Place in public folder
+            description: "Known for its rock-hewn churches, a UNESCO World Heritage Site.",
+        },
+        {
+            name: "Chebera Churchura",
+            image: "/churchura.jpg", // Place in public folder
+            description: "Known for its rock-hewn churches, a UNESCO World Heritage Site.",
+        },
+        {
+            name: "Halala Kella",
+            image: "/halala.jpeg", // Place in public folder
+            description: "Known for its rock-hewn churches, a UNESCO World Heritage Site.",
+        },
         {
             name: "Lalibela",
             image: "/lalibela.jpg", // Place in public folder
@@ -51,10 +72,18 @@ const Gallery = () => {
             description:
                 "A region rich in cultural diversity, home to many indigenous tribes.",
         },
-    
+        {
+            name: "Bale Sof Umer",
+            image: "/omo.jpg", // Place in public folder
+            description:
+                "A region rich in cultural diversity, home to many indigenous tribes.",
+        },
+        {
+            name: "Aba Jifar",
+            image: "/aba-jifar.jpg", // Place in public folder
+            description: "Known for its rock-hewn churches, a UNESCO World Heritage Site.",
+        },
     ];
-
-    const [detailsVisible, setDetailsVisible] = useState<number | null>(null);
 
     return (
         <section id="gallery" className="py-12 bg-gray-100">
@@ -66,7 +95,7 @@ const Gallery = () => {
                     {destinations.map((destination, index) => (
                         <div
                             key={index}
-                            className="relative group bg-gray-200 overflow-hidden rounded-lg shadow-md"
+                            className="relative group bg-gray-200 overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow"
                         >
                             {/* Image */}
                             <Image
@@ -76,22 +105,16 @@ const Gallery = () => {
                                 height={300}
                                 className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
                             />
+
                             {/* Text Overlay */}
-                            <div
-                                className={`absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-75 p-4 text-center transition-opacity duration-300 ${detailsVisible === index || "group-hover:opacity-100"
-                                    } ${detailsVisible !== index && "opacity-0"
-                                    } text-white`}
-                            >
+                            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-75 p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white">
                                 <h3 className="text-2xl font-semibold mb-2">{destination.name}</h3>
                                 <p className="text-sm mb-4">{destination.description}</p>
-                                <button
-                                    className="bg-white text-black px-4 py-2 rounded-full"
-                                    onClick={() =>
-                                        setDetailsVisible(detailsVisible === index ? null : index)
-                                    }
-                                >
-                                    {detailsVisible === index ? "Close" : "View Details"}
-                                </button>
+                                <Link href="/bookyourticket">
+                                    <button className="bg-green-600 text-white px-4 py-2 rounded-full hover:bg-green-700 transition-colors">
+                                        Book Now
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     ))}

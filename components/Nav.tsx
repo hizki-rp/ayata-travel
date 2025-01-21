@@ -1,15 +1,21 @@
-"use client"
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import logo from "../app/assets/images/ayata-logo.jpg";
-import { NAV_LINKS } from "@/constants";
+import logo from "../images/ayata-logo.jpg";
+
+const NAV_LINKS = [
+    { key: "about", label: "About Us", href: "/about" },
+    { key: "services", label: "Services", href: "/services" },
+    { key: "contact", label: "Contact", href: "/contact" },
+];
 
 const Nav = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <nav className="flex items-center justify-between max-container padding-container relative z-30 py-4 bg-white shadow-md">
+        <nav className="flex items-center justify-between max-container padding-container relative z-30 bg-white shadow-md">
             {/* Logo */}
             <Link href="/">
                 <Image src={logo} alt="Logo" width={100} height={35} />
@@ -27,6 +33,11 @@ const Nav = () => {
                         </Link>
                     </li>
                 ))}
+                <Link href="/bookyourticket">
+                    <button className="bg-green-600 text-gray-200 px-4 py-1 rounded-full text-sm font-semibold shadow-md hover:bg-green-700 transition-colors">
+                        Book Now
+                    </button>
+                </Link>
             </ul>
 
             {/* Hamburger Menu (Mobile View) */}
@@ -36,10 +47,10 @@ const Nav = () => {
                     className="focus:outline-none"
                 >
                     <Image
-                        src={isMenuOpen ? "/close.svg"  : "/menu.svg"}
+                        src={isMenuOpen ? "/close.svg" : "/menu.svg"}
                         alt={isMenuOpen ? "Close Menu" : "Open Menu"}
                         width={32}
-                        height={32} 
+                        height={32}
                     />
                 </button>
             </div>

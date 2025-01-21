@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 
 const Hero2 = () => {
 	const images = [
-		"/img-1.png",
-		"/danakil.jpg",
-		"/img-2.png",
-		"/omo.jpg",
-		"/boat.png",
+		"/gorgora.jpg",
 		"/mago.jpg",
+		"/tana.jpg",
+		"/omo.jpg",
+		"/axum.jpg",
+		"/semien.jpg",
 	]; // Ensure these paths point to images in your public directory.
 
 	const [currentIndex, setCurrentIndex] = useState(0);

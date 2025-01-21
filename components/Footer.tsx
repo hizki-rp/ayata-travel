@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../app/assets/images/ayata-logo.jpg";
+import logo from "../images/ayata-logo.jpg";
 
 const Footer = () => {
 	return (
@@ -25,22 +25,22 @@ const Footer = () => {
 						<h4 className="text-lg font-semibold mb-4">Quick Links</h4>
 						<ul className="space-y-2">
 							<li>
-								<Link href="/about-us" className="text-gray-600 hover:text-white">
+								<Link href="/about" className="text-gray-600 hover:text-green-600">
 									About Us
 								</Link>
 							</li>
 							<li>
-								<Link href="/destinations" className="text-gray-600 hover:text-white">
-									Destinations
+								<Link href="/services" className="text-gray-600  hover:text-green-600">
+									services
 								</Link>
 							</li>
 							<li>
-								<Link href="/contact" className="text-gray-600 hover:text-white">
+								<Link href="/contact" className="text-gray-600  hover:text-green-600">
 									Contact
 								</Link>
 							</li>
 							<li>
-								<Link href="/terms" className="text-gray-600 hover:text-white">
+								<Link href="/terms" className="text-gray-600 hover:text-green-600">
 									Terms & Conditions
 								</Link>
 							</li>
@@ -52,7 +52,7 @@ const Footer = () => {
 						<h4 className="text-lg font-semibold mb-4">Contact Us</h4>
 						<ul className="space-y-2 text-gray-600">
 							<li>
-								<strong>Email:</strong> support@ayata-travel.com
+								<strong>Email:</strong> ayatainternational@gmail.com
 							</li>
 							<li>
 								<strong>Phone:</strong> +251-123-456-789
