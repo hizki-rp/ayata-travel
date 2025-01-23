@@ -16,7 +16,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Ayata Travel Solutions",
+  title: "Ayata Tour and Travel",
   description: "Ayata tour and travel.",
 };
 
