@@ -1,65 +1,138 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
+
+// API Configuration
+const API_KEY = "NHhvOEcyWk50N2Vna3VFTE00bFp3MjFKR0ZEOUhkZlg4RTk1MlJlaA==";
+const API_URL = "https://api.countrystatecity.in/v1";
 
 const BookYourTicket = () => {
-  const [formData, setFormData] = useState({
-    tripType: "one-way", // Default trip type
-    departureCountry: "",
-    departureCity: "",
-    arrivalCountry: "",
-    arrivalCity: "",
-    departureDate: "",
-    arrivalDate: "",
-  });
+  const [countries, setCountries] = useState([]);
+  const [departureStates, setDepartureStates] = useState([]);
+  const [departureCities, setDepartureCities] = useState([]);
+  const [arrivalStates, setArrivalStates] = useState([]);
+  const [arrivalCities, setArrivalCities] = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Handle input changes
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  // React Hook Form setup
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      tripType: "one-way",
+      departureCountry: "",
+      departureState: "",
+      departureCity: "",
+      arrivalCountry: "",
+      arrivalState: "",
+      arrivalCity: "",
+      departureDate: "",
+      arrivalDate: "",
+    },
+  });
 
-  // Handle form submission
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  // Watch values for dynamic updates
+  const tripType = watch("tripType");
+  const departureCountry = watch("departureCountry");
+  const departureState = watch("departureState");
+  const arrivalCountry = watch("arrivalCountry");
+  const arrivalState = watch("arrivalState");
 
-    const emailData = {
-      service_id: "YOUR_SERVICE_ID", // Replace with your EmailJS Service ID
-      template_id: "YOUR_TEMPLATE_ID", // Replace with your EmailJS Template ID
-      user_id: "YOUR_PUBLIC_KEY", // Replace with your EmailJS Public Key
-      template_params: {
-        tripType: formData.tripType,
-        departure: `${formData.departureCity}, ${formData.departureCountry}`,
-        arrival: `${formData.arrivalCity}, ${formData.arrivalCountry}`,
-        departureDate: formData.departureDate,
-        arrivalDate: formData.tripType === "two-way" ? formData.arrivalDate : "N/A",
-      },
+  // Fetch countries on mount
+  useEffect(() => {
+    const fetchCountries = async () => {
+      try {
+        const response = await fetch(`${API_URL}/countries`, {
+          headers: { "X-CSCAPI-KEY": API_KEY },
+        });
+        const data = await response.json();
+        setCountries(data);
+      } catch (error) {
+        console.error("Error fetching countries:", error);
+      }
     };
+    fetchCountries();
+  }, []);
 
+  // Fetch states based on selected country
+  useEffect(() => {
+    const fetchStates = async (countryCode: string, forDeparture: boolean) => {
+      if (!countryCode) return;
+      try {
+        const response = await fetch(`${API_URL}/countries/${countryCode}/states`, {
+          headers: { "X-CSCAPI-KEY": API_KEY },
+        });
+        const data = await response.json();
+        if (forDeparture) {
+          setDepartureStates(data);
+          setDepartureCities([]);
+        } else {
+          setArrivalStates(data);
+          setArrivalCities([]);
+        }
+      } catch (error) {
+        console.error("Error fetching states:", error);
+      }
+    };
+    if (departureCountry) fetchStates(departureCountry, true);
+    if (arrivalCountry) fetchStates(arrivalCountry, false);
+  }, [departureCountry, arrivalCountry]);
+
+  // Fetch cities based on selected state
+  useEffect(() => {
+    const fetchCities = async (countryCode: string, stateCode: string, forDeparture: boolean) => {
+      if (!countryCode || !stateCode) return;
+      try {
+        const response = await fetch(
+          `${API_URL}/countries/${countryCode}/states/${stateCode}/cities`,
+          {
+            headers: { "X-CSCAPI-KEY": API_KEY },
+          }
+        );
+        const data = await response.json();
+        if (forDeparture) {
+          setDepartureCities(data);
+        } else {
+          setArrivalCities(data);
+        }
+      } catch (error) {
+        console.error("Error fetching cities:", error);
+      }
+    };
+    if (departureCountry && departureState) fetchCities(departureCountry, departureState, true);
+    if (arrivalCountry && arrivalState) fetchCities(arrivalCountry, arrivalState, false);
+  }, [departureCountry, departureState, arrivalCountry, arrivalState]);
+
+  // Form submission handler
+  const onSubmit = async (data: any) => {
+    setIsSubmitting(true);
     try {
-      const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+      const response = await fetch("https://getform.io/f/axooqmwb", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(emailData),
+        body: JSON.stringify(data),
       });
-
       if (response.ok) {
-        alert("Booking request sent successfully!");
-        setFormData({
-          tripType: "one-way",
-          departureCountry: "",
-          departureCity: "",
-          arrivalCountry: "",
-          arrivalCity: "",
-          departureDate: "",
-          arrivalDate: "",
-        });
+        //alert("Booking request submitted successfully!");
+        const messageLabel = document.querySelector('.display-message');
+
+        if (messageLabel) {
+          // Update the label's text content with a success message
+          messageLabel.textContent = "Booking request submitted successfully!";
+        } else {
+          console.warn("Label element with class 'display-message' not found.");
+          // Consider an alternative success message display mechanism
+
+        }
+  
       } else {
-        throw new Error("Failed to send booking request.");
+        throw new Error("Failed to submit the booking request.");
       }
     } catch (error) {
-      console.error("Error sending email:", error);
+      console.error("Error:", error);
       alert("Oops... Something went wrong. Please try again later.");
     } finally {
       setIsSubmitting(false);
@@ -70,127 +143,159 @@ const BookYourTicket = () => {
     <section className="min-h-screen py-12 bg-gray-100">
       <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
         <h1 className="text-3xl font-bold text-center mb-6">Book Your Ticket</h1>
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           {/* Trip Type */}
+        
           <div>
-            <label className="block text-gray-700 font-medium mb-2">
-              Trip Type
-            </label>
-            <div className="flex items-center gap-6">
-              <label className="flex items-center gap-2">
+            <label className="block text-gray-700 font-medium mb-2">Trip Type</label>
+            <div className="flex items-center gap-4">
+              {/* One-Way Button */}
+              <div>
                 <input
+                  id="one-way"
                   type="radio"
-                  name="tripType"
                   value="one-way"
-                  checked={formData.tripType === "one-way"}
-                  onChange={handleChange}
+                  {...register("tripType", { required: "Trip type is required" })}
+                  className="hidden peer"
                 />
-                One-Way
-              </label>
-              <label className="flex items-center gap-2">
+                <label
+                  htmlFor="one-way"
+                  className="cursor-pointer px-6 py-2 border border-gray-300 rounded-lg text-gray-700 peer-checked:bg-green-600 peer-checked:text-white transition-all"
+                >
+                  One-Way
+                </label>
+              </div>
+
+              {/* Round-Trip Button */}
+              <div>
                 <input
+                  id="two-way"
                   type="radio"
-                  name="tripType"
                   value="two-way"
-                  checked={formData.tripType === "two-way"}
-                  onChange={handleChange}
+                  {...register("tripType", { required: "Trip type is required" })}
+                  className="hidden peer"
                 />
-                Round-Trip
-              </label>
+                <label
+                  htmlFor="two-way"
+                  className="cursor-pointer px-6 py-2 border border-gray-300 rounded-lg text-gray-700 peer-checked:bg-green-600 peer-checked:text-white transition-all"
+                >
+                  Round-Trip
+                </label>
+              </div>
             </div>
+            <p className="text-red-600 text-sm">{errors.tripType?.message}</p>
           </div>
 
+          
           {/* Departure Details */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Departure Country */}
             <div>
               <label className="block text-gray-700 font-medium mb-2">
                 Departure Country
               </label>
-              <input
-                type="text"
-                name="departureCountry"
-                value={formData.departureCountry}
-                onChange={handleChange}
+              <select
+                {...register("departureCountry", {
+                  required: "Departure country is required",
+                })}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
-                required
-              />
+              >
+                <option value="">Select a country</option>
+                {countries.map((country: any) => (
+                  <option key={country.iso2} value={country.iso2}>
+                    {country.name}
+                  </option>
+                ))}
+              </select>
+              <p className="text-red-600 text-sm">{errors.departureCountry?.message}</p>
             </div>
+
+            {/* Departure State */}
             <div>
               <label className="block text-gray-700 font-medium mb-2">
-                Departure City
+                Departure State
               </label>
-              <input
-                type="text"
-                name="departureCity"
-                value={formData.departureCity}
-                onChange={handleChange}
+              <select
+                {...register("departureState", {
+                  required: "Departure state is required",
+                })}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
-                required
-              />
+                disabled={!departureStates.length}
+              >
+                <option value="">Select a state</option>
+                {departureStates.map((state: any) => (
+                  <option key={state.iso2} value={state.iso2}>
+                    {state.name}
+                  </option>
+                ))}
+              </select>
+              <p className="text-red-600 text-sm">{errors.departureState?.message}</p>
             </div>
           </div>
 
-          {/* Arrival Details */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-gray-700 font-medium mb-2">
-                Arrival Country
-              </label>
-              <input
-                type="text"
-                name="arrivalCountry"
-                value={formData.arrivalCountry}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
-                required
-              />
-            </div>
-            <div>
-              <label className="block text-gray-700 font-medium mb-2">
-                Arrival City
-              </label>
-              <input
-                type="text"
-                name="arrivalCity"
-                value={formData.arrivalCity}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
-                required
-              />
-            </div>
+          {/* Departure City */}
+          <div>
+            <label className="block text-gray-700 font-medium mb-2">Departure City</label>
+            <select
+              {...register("departureCity", { required: "Departure city is required" })}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
+              disabled={!departureCities.length}
+            >
+              <option value="">Select a city</option>
+              {departureCities.map((city: any) => (
+                <option key={city.name} value={city.name}>
+                  {city.name}
+                </option>
+              ))}
+            </select>
+            <p className="text-red-600 text-sm">{errors.departureCity?.message}</p>
           </div>
+
+       
 
           {/* Dates */}
+        
+       
+
+        
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Departure Date */}
             <div>
               <label className="block text-gray-700 font-medium mb-2">
                 Departure Date
               </label>
               <input
                 type="date"
-                name="departureDate"
-                value={formData.departureDate}
-                onChange={handleChange}
+                {...register("departureDate", {
+                  required: "Departure date is required",
+                })}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
-                required
+                placeholder="yyyy-mm-dd" // Fallback for unsupported browsers
               />
+              <p className="text-red-600 text-sm">{errors.departureDate?.message}</p>
             </div>
-            {formData.tripType === "two-way" && (
+
+            {/* Return Date */}
+            {tripType === "two-way" && (
               <div>
                 <label className="block text-gray-700 font-medium mb-2">
-                  Arrival Date
+                  Return Date
                 </label>
                 <input
                   type="date"
-                  name="arrivalDate"
-                  value={formData.arrivalDate}
-                  onChange={handleChange}
+                  {...register("arrivalDate", {
+                    required: "Arrival date is required for round trips",
+                  })}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
-                  required
+                  placeholder="yyyy-mm-dd" // Fallback for unsupported browsers
                 />
+                <p className="text-red-600 text-sm">{errors.arrivalDate?.message}</p>
               </div>
             )}
           </div>
+
+   
+
 
           {/* Submit Button */}
           <button
@@ -200,6 +305,10 @@ const BookYourTicket = () => {
           >
             {isSubmitting ? "Submitting..." : "Submit Booking"}
           </button>
+
+          <div>
+            <label className="display-message text-orange-500 flex justify-center text-2xl"></label>
+          </div>
         </form>
       </div>
     </section>

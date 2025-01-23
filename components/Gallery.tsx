@@ -8,22 +8,29 @@ const Gallery = () => {
         {
             name: "Entoto",
             image: "/entoto.jpg", // Place in public folder
-            description: "Known for its rock-hewn churches, a UNESCO World Heritage Site.",
+            description: "A historic mountain overlooking Addis Ababa, known for its panoramic views, eucalyptus forests, and ancient churches.",
         },
         {
             name: "Al Nejashi",
             image: "/al-nejashi.jpg", // Place in public folder
-            description: "Known for its rock-hewn churches, a UNESCO World Heritage Site.",
+            description: "An ancient Islamic site in Ethiopia, home to the Nejashi Mosque, one of the oldest mosques in Africa.",
         },
         {
             name: "Chebera Churchura",
             image: "/churchura.jpg", // Place in public folder
-            description: "Known for its rock-hewn churches, a UNESCO World Heritage Site.",
+            description: "A tranquil spot known for its scenic landscapes and rich biodiversity, perfect for nature enthusiasts.",
+
+
         },
         {
             name: "Halala Kella",
             image: "/halala.jpeg", // Place in public folder
-            description: "Known for its rock-hewn churches, a UNESCO World Heritage Site.",
+            description: "A serene location with cultural significance, featuring natural beauty and historical landmarks unique to the region.",
+        },
+        {
+            name: "Wenchi",
+            image: "/wenchi.jpg", // Place in public folder
+            description: "A serene location with cultural significance, featuring natural beauty and historical landmarks unique to the region.",
         },
         {
             name: "Lalibela",
@@ -74,14 +81,14 @@ const Gallery = () => {
         },
         {
             name: "Bale Sof Umer",
-            image: "/omo.jpg", // Place in public folder
+            image: "/sofumer.jpeg", // Place in public folder
             description:
-                "A region rich in cultural diversity, home to many indigenous tribes.",
+                "A magnificent limestone cave system with intricate formations, located in the Bale Mountains region.",
         },
         {
             name: "Aba Jifar",
             image: "/aba-jifar.jpg", // Place in public folder
-            description: "Known for its rock-hewn churches, a UNESCO World Heritage Site.",
+            description: "A historically significant site associated with King Aba Jifar, featuring remnants of ancient Gibe culture and heritage.",
         },
     ];
 

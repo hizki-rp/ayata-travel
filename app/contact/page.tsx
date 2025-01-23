@@ -87,7 +87,7 @@ const Contact = () => {
                                     Your Phone number
                                 </label>
                                 <input
-                                    type="phone"
+                                    type="number"
                                     id="phone"
                                     name="phone"
                                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
