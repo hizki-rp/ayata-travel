@@ -53,7 +53,7 @@ const Hero2 = () => {
 			{/* Hero Content */}
 			<div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center">
 				<h1 className="text-4xl md:text-6xl font-bold">
-					AYATA Travel Solutions
+					Ayata Tour and Travel
 				</h1>
 				<p className="mt-4 text-lg md:text-2xl">Book Flights from anywhere</p>
 				<p className="mt-2 text-sm md:text-lg">

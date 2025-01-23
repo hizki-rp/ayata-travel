@@ -22,7 +22,7 @@ const CallToAction = () => {
                             Contact Us
                         </button>
                     </Link>
-                    <Link href="/contact">
+                    <Link href="/bookyourticket">
                         <button className="bg-green-600 text-gray-200 px-8 py-4 rounded-full text-lg font-semibold shadow-md hover:bg-green-700 transition-colors">
                             Book Now
                         </button>
