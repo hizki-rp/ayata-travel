@@ -5,7 +5,7 @@ const HowItWorks = () => {
 			<div className="max-w-6xl mx-auto px-6 my-12 ">
 				<h2 className="text-4xl font-bold text-center mb-8">How It Works</h2>
 				<p className="text-center text-gray-600 mb-12">
-					Booking your flight with AYATA Travel Solutions is simple and
+					Booking your flight with Ayata Tour and Travel is simple and
 					convenient. Follow these easy steps to get your travel plans sorted
 					in no time.
 				</p>

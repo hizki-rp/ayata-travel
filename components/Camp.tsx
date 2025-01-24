@@ -40,7 +40,7 @@ const Camp = () => {
           <div className='hide-scrollbar flex h-[340px] w-full items-between justify-start gap-8 overflow-x-auto lg:h-[500px] xl:h-740px]'>
               <CampSite backgroundImage="bg-bg-img-1" title="gorgora" subtitle="North Gonder" peopleJoined="50+ Tickets booked" />
               
-              <CampSite backgroundImage="bg-bg-img-2" title="Mountain view camp" subtitle="somewhere in the willderness" peopleJoined="50+ Tickets booked" />
+              <CampSite backgroundImage="bg-bg-img-2" title="Halala Kella" subtitle="Southwestern Ethiopia" peopleJoined="50+ Tickets booked" />
            </div>
 
       </section>

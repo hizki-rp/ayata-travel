@@ -1,7 +1,6 @@
 import CallToAction from "@/components/CallToAction";
 import Camp from "@/components/Camp";
 import Contact from "./contact/page";
-import Features from "@/components/Features";
 import Footer from "@/components/Footer";
 import Gallery from "@/components/Gallery";
 import Guide from "@/components/Guide";

@@ -28,36 +28,33 @@ const PopularDestinations = () => {
 
 	return (
 		<section className="py-12 bg-gray-100">
-			<div className="max-w-6xl mx-auto px-6">
-				<h2 className="text-4xl font-bold text-center mb-8">
-					Popular places to visit
-				</h2>
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
-					{destinations.map((destination, index) => (
-						<div
-							key={index}
-							className="bg-white shadow-md rounded-lg overflow-hidden hover:bg-green-100 hover:delay-75"
-						>
-							<Image
-								src={destination.image}
-								alt={destination.name}
-								width={400}
-								height={300}
-								className="w-full h-56 object-cover"
-							/>
-							<div className="p-6">
-								<h3 className="text-2xl font-semibold mb-2">
-									{destination.name}
-								</h3>
-								<p className="text-gray-700 mb-4">{destination.description}</p>
-								<p className="text-sm text-gray-500">
-									<strong>Location:</strong> {destination.location}
-								</p>
-							</div>
-						</div>
-					))}
-				</div>
-			</div>
+			<h1 className="mt-4 text-4xl font-medium text-center mb-8 text-gray-900"> Popular Destinations </h1>
+			<div className=" max-w-6xl mx-auto px-6 ">
+				<div className=" grid grid-cols-1 md:grid-cols-3 gap-8" >
+			
+		
+						{destinations.map((destination, index) => (
+							<div key={index} className="group bg-white relative block overflow-hidden">
+								<img
+									src={destination.image}
+									alt={destination.name}
+									className="rounded-sm h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"
+								/>
+
+								<div className="relative bg-white p-6 mt-4">
+									<span className="whitespace-nowrap bg-green-600 px-3 py-1.5 text-xs font-medium text-white"> {destination.name} </span>
+
+									<h3 className="mt-4 text-lg font-medium text-gray-900">Location: { destination.location}</h3>
+
+									<p className="mt-1.5 text-sm w-30 text-gray-700">{ destination.description}</p>
+
+								</div>	
+				        </div>
+							
+						))}
+				
+				</div>	
+		  </div>
 		</section>
 	);
 };

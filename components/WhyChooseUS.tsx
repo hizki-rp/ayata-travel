@@ -8,7 +8,7 @@ const WhyChooseUs: FC = () => {
                     Why Choose Us
                 </h2>
                 <p className="text-center text-gray-100 mb-12">
-                    At AYATA Travel Solutions, we’re committed to providing exceptional
+                    At Ayata Tour and Travel, we’re committed to providing exceptional
                     services and ensuring a seamless travel experience for all our
                     customers. Here’s why thousands trust us:
                 </p>

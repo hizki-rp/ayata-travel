@@ -9,7 +9,7 @@ const Guide = () => {
               <p>We are here for you</p>
               <div className=" flex flex-wrap justify-between gap-5 lg:gap-10">
                   <h2 className="bold-40 lg:bold-64 xl:max-w-[390px]">Guide You to Easy Path</h2>
-                  <p className="regular-16 text-gray-30 xl:max-w-[540px]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, commodi. Corrupti iusto ab natus ad rerum quo similique consectetur! Beatae, sapiente esse? Voluptates nostrum non provident sequi recusandae nesciunt, pariatur enim? Saepe, dolorum itaque. Maxime vero fugiat similique tempore dignissimos natus, sint quas impedit officiis aspernatur pariatur unde? Fugiat, facere.</p>      
+                  <p className="regular-16 text-gray-30 xl:max-w-[540px]">We are dedicated to making your travel experience seamless and enjoyable. Our team of experts is here to guide you through every step of your journey, ensuring you have access to the best destinations, convenient booking processes, and exceptional customer support. Whether you're exploring the historic sites of Lalibela or embarking on an adventure in the Simien Mountains, we provide personalized assistance to make your trip memorable.</p>      
               </div>
           </div>
           <div className="flexCenter relative w-full">

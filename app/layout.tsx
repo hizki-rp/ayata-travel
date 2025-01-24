@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Nav from "@/components/Nav";
+import WhatsappLive from "@/components/WhatsappLive";
 import Footer from "@/components/Footer";
 
 const geistSans = localFont({
@@ -33,6 +34,7 @@ export default function RootLayout({
         <Nav/>
         <main className="relative overflow-hidden">
           {children}
+          <WhatsappLive />
         </main>
         <Footer/>
       </body>

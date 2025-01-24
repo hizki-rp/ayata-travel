@@ -15,7 +15,7 @@ const Footer = () => {
 					<div className="flex flex-col items-center md:items-start">
 						<Image src={logo} alt="AYATA Logo" width={100} height={40} />
 						<p className="mt-4 text-gray-700 text-center md:text-left">
-							AYATA Travel Solutions - Making travel easier for everyone. Book
+							Ayata Tour and Travel - Making travel easier for everyone. Book
 							flights and explore the world with comfort and convenience.
 						</p>
 					</div>
