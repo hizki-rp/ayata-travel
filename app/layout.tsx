@@ -5,6 +5,8 @@ import Nav from "@/components/Nav";
 import WhatsappLive from "@/components/WhatsappLive";
 import Footer from "@/components/Footer";
 
+import { ReactLenis } from "@/utils/lenis";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -28,16 +30,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="!scroll-smooth">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Nav/>
-        <main className="relative overflow-hidden">
-          {children}
-          <WhatsappLive />
-        </main>
-        <Footer/>
-      </body>
+      <ReactLenis root>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <Nav />
+          <main className="relative overflow-hidden">
+            {children}
+            <WhatsappLive />
+          </main>
+          <Footer />
+        </body>
+      </ReactLenis>
     </html>
   );
 }
