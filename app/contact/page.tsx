@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Contact = () => {
     return (
-        <section className="min-h-screen bg-gray-100 py-12 pb-[200]">
+        <section className="min-h-screen bg-gray-100 py-12 pb-[200]" id="contact">
             <div className="max-w-7xl mx-auto px-6">
                 <h1 className="text-4xl font-bold text-center mb-8">Get in Touch</h1>
                 <p className="text-lg text-center text-gray-600 mb-12">
