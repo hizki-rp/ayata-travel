@@ -17,7 +17,7 @@ const CallToAction = () => {
 
                 {/* Section 2 */}
                 <div className="flex gap-4 items-center justify-center">
-                    <Link href="/BookYourTravel">
+                    <Link href="#contact">
                         <button className="bg-white text-green-700 px-8 py-4 rounded-full text-lg font-semibold shadow-md hover:bg-gray-300 transition-colors">
                             Contact Us
                         </button>
