@@ -1,13 +1,18 @@
 // components/Terms.jsx
-import React from 'react';
-
+import Link from "next/link";
 const Terms = () => {
     return (
         <div className="container mx-auto px-4 py-8">
             <h1 className="text-3xl font-bold text-center mb-6">Terms and Conditions</h1>
 
             <div className="prose max-w-3xl mx-auto">
-                <p>Welcome to <strong>Ayata Travel</strong>! These Terms and Conditions govern your use of our website and services. By accessing or using <a href="https://ayata-travel.vercel.app/" className="text-blue-500 hover:underline">https://ayata-travel.vercel.app/</a>, you agree to comply with and be bound by these terms. If you do not agree with any part of these terms, please do not use our website.</p>
+                <p>Welcome to <strong>Ayata Travel</strong>! These Terms and Conditions govern your use of our website and services. By accessing or using 
+                    <Link href="/terms" className="text-gray-600 hover:text-green-600">
+                        Terms & Conditions
+                    </Link>
+                    
+                    
+                    you agree to comply with and be bound by these terms. If you do not agree with any part of these terms, please do not use our website.</p>
 
                 <h2 className="text-2xl font-semibold mt-6">1. Use of the Website</h2>
                 <p>1.1. The content on this website is for general information and personal use only. It is subject to change without notice.</p>
@@ -37,13 +42,13 @@ const Terms = () => {
                 <p>7.1. Ayata Travel reserves the right to modify these Terms and Conditions at any time. Changes will be effective immediately upon posting on the website. Your continued use of the website after any changes constitutes your acceptance of the revised terms.</p>
 
                 <h2 className="text-2xl font-semibold mt-6">8. Governing Law</h2>
-                <p>8.1. These Terms and Conditions are governed by and construed in accordance with the laws of [Your Country/Region]. Any disputes relating to these terms will be subject to the exclusive jurisdiction of the courts of [Your Country/Region].</p>
+                <p>8.1. These Terms and Conditions are governed by and construed in accordance with the laws of Ethiopia. Any disputes relating to these terms will be subject to the exclusive jurisdiction of the courts of Addis Ababa.</p>
 
                 <h2 className="text-2xl font-semibold mt-6">9. Contact Us</h2>
                 <p>If you have any questions about these Terms and Conditions, please contact us at:</p>
                 <ul>
-                    <li><strong>Email:</strong> [Your Email Address]</li>
-                    <li><strong>Address:</strong> [Your Physical Address, if applicable]</li>
+                    <li><strong>Email:</strong>ayatainternational@gmail.com</li>
+                    <li><strong>Address:</strong>Addis Ababa, Ethiopia</li>
                 </ul>
 
                 <p className="mt-6">Thank you for visiting Ayata Travel! We hope you enjoy your experience on our website.</p>
