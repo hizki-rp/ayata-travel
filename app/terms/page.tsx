@@ -1,5 +1,7 @@
 // components/Terms.jsx
+
 import Link from "next/link";
+
 const Terms = () => {
     return (
         <div className="container mx-auto px-4 py-8">
@@ -7,9 +9,11 @@ const Terms = () => {
 
             <div className="prose max-w-3xl mx-auto">
                 <p>Welcome to <strong>Ayata Travel</strong>! These Terms and Conditions govern your use of our website and services. By accessing or using 
-                    <Link href="/privacy" className="text-gray-600 hover:text-green-600">
-                        Terms & Conditions
-                    </Link>
+                    <ul>
+                        <Link href="/privacy" className="text-gray-600 hover:text-green-600">
+                            Terms & Conditions
+                        </Link>
+                   </ul>
                     
                     
                     you agree to comply with and be bound by these terms. If you do not agree with any part of these terms, please do not use our website.</p>
