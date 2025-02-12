@@ -55,7 +55,7 @@ const Privacy = () => {
                 <h2 className="text-2xl font-semibold mt-6">8. Contact Us</h2>
                 <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
                 <ul>
-                    <li><strong>Email:</strong>ayatatravelinternational@gmail.com</li>
+                    <li><strong>Email:</strong>ayatainternational@gmail.com</li>
                     <li><strong>Address:</strong> Addis Ababa</li>
                 </ul>
 
