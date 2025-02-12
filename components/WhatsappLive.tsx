@@ -7,7 +7,7 @@ const WhatsappLive = () => {
 
   const whatsappNumber = "+251911043323";
   const baseUrl = "https://api.whatsapp.com/send/";
-  const encodeMessage = "Contact us Visa Whatsapp!"
+  const encodeMessage = "Can i get more info on your services?"
   
   const whatsappLink = `${baseUrl}?phone=${whatsappNumber}&text=${encodeMessage}&type=phone_number&app_absent=0`;
 
