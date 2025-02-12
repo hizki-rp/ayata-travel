@@ -8,15 +8,7 @@ const Terms = () => {
             <h1 className="text-3xl font-bold text-center mb-6">Terms and Conditions</h1>
 
             <div className="prose max-w-3xl mx-auto">
-                <p>Welcome to <strong>Ayata Travel</strong>! These Terms and Conditions govern your use of our website and services. By accessing or using</p> 
-                    <ul>
-                        <Link href="/privacy" className="text-blue-600 hover:text-green-600">
-                            Terms & Conditions
-                        </Link>
-                   </ul>
-                    
-                    
-                  <p>  you agree to comply with and be bound by these terms. If you do not agree with any part of these terms, please do not use our website.</p>
+                <p>Welcome to <strong>Ayata Travel</strong>! These Terms and Conditions govern your use of our website and services. By accessing or using <span className="text-green-300"> Terms & Conditions </span> you agree to comply with and be bound by these terms. If you do not agree with any part of these terms, please do not use our website.</p>
 
                 <h2 className="text-2xl font-semibold mt-6">1. Use of the Website</h2>
                 <p>1.1. The content on this website is for general information and personal use only. It is subject to change without notice.</p>
@@ -40,7 +32,14 @@ const Terms = () => {
                 <p>5.2. We do not guarantee that the website will be error-free, secure, or available at all times.</p>
 
                 <h2 className="text-2xl font-semibold mt-6">6. Privacy</h2>
-                <p>6.1. Your use of this website is also governed by our <a href="/privacy-policy" className="text-blue-500 hover:underline">Privacy Policy</a>, which explains how we collect, use, and protect your personal information. By using this website, you consent to the practices described in the Privacy Policy.</p>
+                <p>6.1. Your use of this website is also governed by our </p>
+                    
+                <ul>
+                    <Link href="/privacy" className="text-blue-600 hover:text-green-600">
+                        Privacy Policy
+                    </Link>
+                </ul>
+                    <p>, which explains how we collect, use, and protect your personal information. By using this website, you consent to the practices described in the Privacy Policy.</p>
 
                 <h2 className="text-2xl font-semibold mt-6">7. Changes to Terms and Conditions</h2>
                 <p>7.1. Ayata Travel reserves the right to modify these Terms and Conditions at any time. Changes will be effective immediately upon posting on the website. Your continued use of the website after any changes constitutes your acceptance of the revised terms.</p>
