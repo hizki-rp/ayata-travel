@@ -8,15 +8,15 @@ const Terms = () => {
             <h1 className="text-3xl font-bold text-center mb-6">Terms and Conditions</h1>
 
             <div className="prose max-w-3xl mx-auto">
-                <p>Welcome to <strong>Ayata Travel</strong>! These Terms and Conditions govern your use of our website and services. By accessing or using 
+                <p>Welcome to <strong>Ayata Travel</strong>! These Terms and Conditions govern your use of our website and services. By accessing or using</p> 
                     <ul>
-                        <Link href="/privacy" className="text-gray-600 hover:text-green-600">
+                        <Link href="/privacy" className="text-blue-600 hover:text-green-600">
                             Terms & Conditions
                         </Link>
                    </ul>
                     
                     
-                    you agree to comply with and be bound by these terms. If you do not agree with any part of these terms, please do not use our website.</p>
+                  <p>  you agree to comply with and be bound by these terms. If you do not agree with any part of these terms, please do not use our website.</p>
 
                 <h2 className="text-2xl font-semibold mt-6">1. Use of the Website</h2>
                 <p>1.1. The content on this website is for general information and personal use only. It is subject to change without notice.</p>

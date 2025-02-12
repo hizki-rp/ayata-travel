@@ -56,7 +56,7 @@ const Privacy = () => {
                 <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
                 <ul>
                     <li><strong>Email:</strong>ayatatravelinternational@gmail.com</li>
-                    <li><strong>Address:</strong> [Your Physical Address, if applicable]</li>
+                    <li><strong>Address:</strong> Addis Ababa</li>
                 </ul>
 
                 <p className="mt-6">Thank you for trusting Ayata Travel with your personal information. We are committed to protecting your privacy and providing a safe online experience.</p>
