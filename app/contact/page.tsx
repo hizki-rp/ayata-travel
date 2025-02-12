@@ -23,7 +23,7 @@ const Contact = () => {
                             </li>
                             <li>
                                 <strong>Phone:</strong>
-                                <p>+251-123-456-789</p>
+                                <p>+251 91 104 3323</p>
                             </li>
                             <li>
                                 <strong>Email:</strong>
