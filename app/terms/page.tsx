@@ -32,14 +32,14 @@ const Terms = () => {
                 <p>5.2. We do not guarantee that the website will be error-free, secure, or available at all times.</p>
 
                 <h2 className="text-2xl font-semibold mt-6">6. Privacy</h2>
-                <p>6.1. Your use of this website is also governed by our </p>
+                <p>6.1. Your use of this website is also governed by our 
                     
        
                     <Link href="/privacy" className=" inline text-blue-600 hover:text-green-600">
                         Privacy Policy
                     </Link>
            
-                    <p>, which explains how we collect, use, and protect your personal information. By using this website, you consent to the practices described in the Privacy Policy.</p>
+                    , which explains how we collect, use, and protect your personal information. By using this website, you consent to the practices described in the Privacy Policy.</p>
 
                 <h2 className="text-2xl font-semibold mt-6">7. Changes to Terms and Conditions</h2>
                 <p>7.1. Ayata Travel reserves the right to modify these Terms and Conditions at any time. Changes will be effective immediately upon posting on the website. Your continued use of the website after any changes constitutes your acceptance of the revised terms.</p>
