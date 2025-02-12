@@ -7,7 +7,7 @@ const Terms = () => {
 
             <div className="prose max-w-3xl mx-auto">
                 <p>Welcome to <strong>Ayata Travel</strong>! These Terms and Conditions govern your use of our website and services. By accessing or using 
-                    <Link href="/terms" className="text-gray-600 hover:text-green-600">
+                    <Link href="/privacy" className="text-gray-600 hover:text-green-600">
                         Terms & Conditions
                     </Link>
                     
