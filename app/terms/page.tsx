@@ -34,11 +34,11 @@ const Terms = () => {
                 <h2 className="text-2xl font-semibold mt-6">6. Privacy</h2>
                 <p>6.1. Your use of this website is also governed by our </p>
                     
-                <ul>
-                    <Link href="/privacy" className="text-blue-600 hover:text-green-600">
+       
+                    <Link href="/privacy" className=" inline text-blue-600 hover:text-green-600">
                         Privacy Policy
                     </Link>
-                </ul>
+           
                     <p>, which explains how we collect, use, and protect your personal information. By using this website, you consent to the practices described in the Privacy Policy.</p>
 
                 <h2 className="text-2xl font-semibold mt-6">7. Changes to Terms and Conditions</h2>
