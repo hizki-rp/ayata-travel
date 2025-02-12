@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const WhatsappLive = () => {
 
-  const whatsappNumber = "+251943349980";
+  const whatsappNumber = "+251911043323";
   const baseUrl = "https://api.whatsapp.com/send/";
   const encodeMessage = "Contact us Visa Whatsapp!"
   
