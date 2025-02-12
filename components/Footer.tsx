@@ -55,7 +55,7 @@ const Footer = () => {
 								<strong>Email:</strong> ayatainternational@gmail.com
 							</li>
 							<li>
-								<strong>Phone:</strong> +251-123-456-789
+								<strong>Phone:</strong> +251 91 104 3323
 							</li>
 							<li>
 								<strong>Address:</strong> Addis Ababa, Ethiopia
