@@ -110,7 +110,7 @@ const BookYourTicket = () => {
   const onSubmit = async (data: any) => {
     setIsSubmitting(true);
     try {
-      const response = await fetch("https://getform.io/f/axooqmwb", {
+      const response = await fetch("https://formspree.io/f/mdkalprv", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
