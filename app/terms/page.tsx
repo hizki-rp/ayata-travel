@@ -35,7 +35,7 @@ const Terms = () => {
                 <p>6.1. Your use of this website is also governed by our 
                     
        
-                    <Link href="/privacy" className=" inline text-blue-600 hover:text-green-600">
+                    <Link href="/privacy" className=" inline text-blue-600 hover:text-green-600"> 
                         Privacy Policy
                     </Link>
            

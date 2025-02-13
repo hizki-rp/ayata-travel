@@ -41,7 +41,7 @@ const Contact = () => {
                     {/* Contact Form */}
                     <div className="bg-white p-8 rounded-lg shadow-md">
                         <h2 className="text-2xl font-bold mb-6">Contact Form</h2>
-                        <form action="https://getform.io/f/axooqmwb" method="post">
+                        <form action="https://formspree.io/f/mvgzbvjb" method="post">
                             <div className="mb-4">
                                 <label
                                     htmlFor="name"
