@@ -117,7 +117,7 @@ const BookYourTicket = () => {
       });
       if (response.ok) {
         //alert("Booking request submitted successfully!");
-        const messageLabel = document.querySelector('.display-message');
+        const messageLabel = document.querySelector  N('.display-message');
 
         if (messageLabel) {
           // Update the label's text content with a success message
