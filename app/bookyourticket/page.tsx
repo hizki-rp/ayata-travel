@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 
@@ -117,7 +118,7 @@ const BookYourTicket = () => {
       });
       if (response.ok) {
         //alert("Booking request submitted successfully!");
-        const messageLabel = document.querySelector  N('.display-message');
+        const messageLabel = document.querySelector('.display-message');
 
         if (messageLabel) {
           // Update the label's text content with a success message
