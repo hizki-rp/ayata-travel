@@ -68,8 +68,16 @@ const Nav = () => {
                                 >
                                     {link.label}
                                 </Link>
+                          
                             </li>
                         ))}
+                        <Link href="/bookyourticket">
+                            <button className="bg-green-600 text-gray-200 px-4 py-1 rounded-full text-sm font-semibold shadow-md hover:bg-green-700 transition-colors"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Book Now
+                            </button>
+                        </Link>
                     </ul>
                 </div>
             )}

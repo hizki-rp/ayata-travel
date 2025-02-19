@@ -145,6 +145,85 @@ const BookYourTicket = () => {
       <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
         <h1 className="text-3xl font-bold text-center mb-6">Book Your Ticket</h1>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+         {/*user information*/}
+          <div className="flex gap-12">
+            <div>
+              <div className="mb-4">
+                <label
+                  htmlFor="fname"
+                  className="block text-gray-700 font-medium mb-2"
+                >
+                  First Name
+                </label>
+                <input
+                  type="text"
+                  id="fname"
+                  name="fname"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
+
+              <div className="mb-4">
+                <label
+                  htmlFor="email"
+                  className="block text-gray-700 font-medium mb-2"
+                >
+                  Your Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+
+            </div>
+
+            <div>
+              <div className="mb-4">
+                <label
+                  htmlFor="lname"
+                  className="block text-gray-700 font-medium mb-2"
+                >
+                  Last Name
+                </label>
+                <input
+                  type="text"
+                  id="lname"
+                  name="lname"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
+
+
+              <div className="mb-4">
+                <label
+                  htmlFor="phone"
+                  className="block text-gray-700 font-medium mb-2"
+                >
+                  Your Phone number
+                </label>
+                <input
+                  type="number"
+                  id="phone"
+                  name="phone"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
+                  placeholder="Enter your phone number"
+                  required
+                />
+              </div>
+            </div>
+
+
+          </div>
+         
           {/* Trip Type */}
         
           <div>
