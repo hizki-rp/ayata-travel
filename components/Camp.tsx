@@ -22,10 +22,10 @@ const CampSite = ({backgroundImage, title, subtitle, peopleJoined}:CampProps) =>
                         <p className='regular-14 text-white'>{subtitle}</p>
                     </div>
                 </div>
-                <div className='flexCenter gap-6 '>
-                    <span className='flex -space-x-4 overflow-hidden'>
+                <div className='flexCenter gap-6'>
+                    <span className='flex -space-x-4 overflow-hidden '>
                         {PEOPLE_URL.map((url) => (
-                            <Image src={url} key={url} alt="person" width={52} height={52} className="rounded-full border-white" />
+                            <Image src={url} key={url} alt="person" width={52} height={52} className="rounded-full border-[2px] border-gray-300" />
                         ))}
                     </span>
                     <p className='bold-16 md:bold-20 text-white'>{peopleJoined}</p>
