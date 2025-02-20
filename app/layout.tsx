@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     default: "Ayata Tour and Travel",
     template: "%s - Ayata Tour and Travel"
   },
-  description: "Book flights from anywhere.",
+  description: "Unlock your next travel destination.",
 };
 
 export default function RootLayout({
