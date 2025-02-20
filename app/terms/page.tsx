@@ -1,7 +1,12 @@
 // components/Terms.jsx
 
 import Link from "next/link";
+import { Metadata } from 'next';
 
+
+export const metadata: Metadata = {
+    title: "Terms and conditions"
+}
 const Terms = () => {
     return (
         <div className="container mx-auto px-4 py-8">

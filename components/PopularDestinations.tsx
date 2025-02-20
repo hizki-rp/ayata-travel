@@ -1,6 +1,13 @@
 
 import Image from "next/image";
 
+import { Metadata } from 'next';
+
+
+export const metadata: Metadata = {
+	title: "Popular Destinations"
+}
+
 const PopularDestinations = () => {
 	const destinations = [
 		{

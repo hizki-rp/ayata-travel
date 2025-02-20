@@ -1,4 +1,6 @@
+
 import type { Metadata } from "next";
+import {Inter} from "next/font/google"
 import localFont from "next/font/local";
 import "./globals.css";
 import Nav from "@/components/Nav";
@@ -6,6 +8,8 @@ import WhatsappLive from "@/components/WhatsappLive";
 import Footer from "@/components/Footer";
 
 import { ReactLenis } from "@/utils/lenis";
+
+const inter = Inter({ subsets: ["latin"] })
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -19,8 +23,11 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Ayata Tour and Travel",
-  description: "Ayata tour and travel.",
+  title: {
+    default: "Ayata Tour and Travel",
+    template: "%s - Ayata Tour and Travel"
+  },
+  description: "Book flights from anywhere.",
 };
 
 export default function RootLayout({

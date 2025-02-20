@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import logo from "../images/ayata-logo.jpg";
+import logo from "../images/ayata-logo.png";
 
 const NAV_LINKS = [
     { key: "about", label: "About Us", href: "/about" },
@@ -15,7 +15,7 @@ const Nav = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <nav className="flex items-center justify-between max-container padding-container relative z-30 bg-white shadow-md">
+        <nav className="flex items-center justify-between max-container padding-container relative z-30 bg-gray-100 shadow-md">
             {/* Logo */}
             <Link href="/">
                 <Image src={logo} alt="Logo" width={100} height={35} />

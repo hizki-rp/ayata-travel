@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../images/ayata-logo.jpg";
+import logo from "../images/ayata-logo.png";
 
 const Footer = () => {
 	return (

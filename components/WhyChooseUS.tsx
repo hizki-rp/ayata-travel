@@ -1,5 +1,12 @@
 import { FC } from "react";
 
+import { Metadata } from 'next';
+
+
+export const metadata: Metadata = {
+    title: "Why Choose Us"
+}
+
 const WhyChooseUs: FC = () => {
     return (
         <section className="py-12 bg-green-700">
