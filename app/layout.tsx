@@ -1,6 +1,6 @@
 
 import type { Metadata } from "next";
-import {Inter} from "next/font/google"
+//import {Inter} from "next/font/google"
 import localFont from "next/font/local";
 import "./globals.css";
 import Nav from "@/components/Nav";
@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 
 import { ReactLenis } from "@/utils/lenis";
 
-const inter = Inter({ subsets: ["latin"] })
+//const inter = Inter({ subsets: ["latin"] })
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
