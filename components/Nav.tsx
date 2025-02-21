@@ -16,7 +16,8 @@ const Nav = () => {
 
     return (
         <div className="">
-            <div className=" flex gap-4 max-sm:flex-col items-center justify-between text-center bg-green-600 text-white px-16 py-1 rounded font-[sans-serif] 
+
+            <div className=" flex gap-4 max-sm:hidden items-center justify-between text-center bg-green-600 text-white px-16 py-1 font-[sans-serif] 
 
 ">
                 <p className="text-base"><span className="font-bold">
@@ -26,27 +27,26 @@ const Nav = () => {
                     <Image src="/phone-call.svg" alt="phone icon" width={24} height={24} className="inline p-1 mx-2 bg-white rounded-full" />
                 </span> +251 91 104 3323</p>
 
-              
-                    <Link href="https://facebook.com" target="_blank">
-                        <Image
-                            src="/facebook.svg"
-                            alt="Facebook"
-                            width={24}
-                            height={24}
-                        className="hover:opacity-60 shadow-xxl p-1 mx-2 bg-white rounded-full"
-                        />
-                    </Link>
-    
-            </div>
 
-            <nav className=" flex items-center justify-between max-container padding-container relative z-30 shadow-md max-h-4 py-9">
+                <Link href="https://facebook.com" target="_blank">
+                    <Image
+                        src="/facebook.svg"
+                        alt="Facebook"
+                        width={24}
+                        height={24}
+                        className="hover:opacity-60 shadow-xxl p-1 mx-2 bg-white rounded-full"
+                    />
+                </Link>
+
+            </div>
+            <nav className="flex items-center justify-between max-container px-16 relative z-30 bg-gray-100 shadow-md">
                 {/* Logo */}
                 <Link href="/">
-                    <Image src={logo} alt="Logo" width={80} height={35} />
+                    <Image src={logo} alt="Logo" width={100} height={35} />
                 </Link>
 
                 {/* Navigation Links (Desktop View) */}
-                <ul className="hidden lg:flex h-full gap-6">
+                <ul className="hidden lg:flex h-full gap-8">
                     {NAV_LINKS.map((link) => (
                         <li key={link.key}>
                             <Link
@@ -81,7 +81,7 @@ const Nav = () => {
 
                 {/* Mobile Menu */}
                 {isMenuOpen && (
-                    <div className="absolute top-full left-0 w-ful shadow-lg">
+                    <div className="absolute top-full left-0 w-full bg-white shadow-lg">
                         <ul className="flex flex-col items-center py-4 gap-4">
                             {NAV_LINKS.map((link) => (
                                 <li key={link.key}>
@@ -92,22 +92,21 @@ const Nav = () => {
                                     >
                                         {link.label}
                                     </Link>
-
                                 </li>
                             ))}
-                            <Link href="/bookyourticket">
-                                <button className="bg-green-600 text-gray-200 px-4 py-1 rounded-full text-sm font-semibold shadow-md hover:bg-green-700 transition-colors"
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    Book Now
-                                </button>
-                            </Link>
+
+                            <li>
+                                <Link href="/bookyourticket">
+                                    <button className="bg-green-600 text-gray-200 px-4 py-1 rounded-full text-sm font-semibold shadow-md hover:bg-green-700 transition-colors" onClick={() => setIsMenuOpen(false)}>
+                                        Book Now
+                                    </button>
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                 )}
-            </nav> 
-
-     </div>
+            </nav>
+      </div>
     );
 };
 
