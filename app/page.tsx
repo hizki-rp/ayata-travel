@@ -15,6 +15,9 @@ import WhyChooseUs from "@/components/WhyChooseUS";
 export default function Home() {
   return (
     <>
+
+      <link rel="icon" href="/favicon.ico"></link>
+      
       <Hero2 />
       <PopularDestinations />
       <Camp />
