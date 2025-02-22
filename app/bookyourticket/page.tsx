@@ -23,6 +23,10 @@ const BookYourTicket = () => {
     formState: { errors },
   } = useForm({
     defaultValues: {
+      fname: "",
+      lname: "",
+      email: "",
+      phone: "",
       tripType: "one-way",
       departureCountry: "",
       departureState: "",
@@ -149,79 +153,66 @@ const BookYourTicket = () => {
           <div className="flex gap-12 max-sm:flex-col max-sm:gap-4">
             <div>
               <div className="mb-4">
-                <label
-                  htmlFor="fname"
-                  className="block text-gray-700 font-medium mb-2"
-                >
+                <label htmlFor="fname" className="block text-gray-700 font-medium mb-2">
                   First Name
                 </label>
                 <input
                   type="text"
                   id="fname"
-                  name="fname"
+                
+                  {...register("fname", { required: "First name is required" })}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 placeholder:text-gray-500"
                   placeholder="Enter your name"
-                  required
                 />
               </div>
 
               <div className="mb-4">
-                <label
-                  htmlFor="email"
-                  className="block text-gray-700 font-medium mb-2"
-                >
+                <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
                   Your Email
                 </label>
                 <input
                   type="email"
                   id="email"
-                  name="email"
+           
+                  {...register("email", { required: "Email is required" })}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 placeholder:text-gray-500"
                   placeholder="Enter your email"
                   required
                 />
               </div>
-
             </div>
 
             <div>
               <div className="mb-4">
-                <label
-                  htmlFor="lname"
-                  className="block text-gray-700 font-medium mb-2"
-                >
+                <label htmlFor="lname" className="block text-gray-700 font-medium mb-2">
                   Last Name
                 </label>
                 <input
                   type="text"
                   id="lname"
-                  name="lname"
+               
+                  {...register("lname", { required: "Last name is required" })}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 placeholder:text-gray-500"
                   placeholder="Enter your name"
                   required
                 />
               </div>
 
-
               <div className="mb-4">
-                <label
-                  htmlFor="phone"
-                  className="block text-gray-700 font-medium mb-2"
-                >
+                <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">
                   Your Phone number
                 </label>
                 <input
                   type="number"
                   id="phone"
-                  name="phone"
+               
+                  {...register("phone", { required: "Phone number is required" })}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 placeholder:text-gray-500"
                   placeholder="Enter your phone number"
                   required
                 />
               </div>
             </div>
-
-
           </div>
          
           {/* Trip Type */}
